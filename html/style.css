@@ -1,0 +1,30 @@
+#id {
+    font-family: 'Titillium Web', sans-serif;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    font-size: 2vh;
+    color: rgba(207, 62, 220, 0.5);
+    /* text-align: right; */
+}
+
+#playersOnline {
+    font-family: 'Titillium Web', sans-serif;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    font-size: 2vh;
+}
+
+#status {
+    /* margin: 1rem; */
+    padding-left: 1vh;
+    /* text-align: center; */
+    color: white;
+}
+
+.name {
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    font-size: 3vh;
+    padding-left: 9vh;
+    padding-top: 3vh;
+}
