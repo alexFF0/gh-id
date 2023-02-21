@@ -1,7 +1,7 @@
 local PlayersList = {}
 CreateThread(function()
     while true do
-        local data = {id = GetPlayerServerId(PlayerId()), playersActive = #GetAcPlayers()}
+        local data = {id = GetPlayerServerId(PlayerId()), playersActive = #GetGHPlayers()}
         table.insert(PlayersList, data)
         SendNUIMessage({
             type = "update",
@@ -19,7 +19,7 @@ RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
 end)
 
 
-function GetAcPlayers()
+function GetGHPlayers()
     local players = {}
     for i = 0, 255 do
         if NetworkIsPlayerActive(i) then
@@ -28,33 +28,3 @@ function GetAcPlayers()
     end
     return players
 end
-
-
--- local PlayersList = {}
--- -- CreateThread(function()
--- --     while true do
--- --         local data = {id = GetPlayerServerId(PlayerPedId()), playersActive = #GetAcPlayers()}
--- --         table.insert(PlayersList, data)
--- --         SendNUIMessage({
--- --             type = "update",
--- --             data = data
--- --         })
--- --         Wait(5 * 1000)
--- --     end
--- -- end)
-
--- RegisterNetEvent("cz-logo:client:updatePlayers", function(p)
---     PlayersList = p
---     SendNUIMessage({
---         type = "update",
---         data = p
---     })
--- end)
-
--- RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
---     SendNUIMessage({
---         type = "show",
---         data = PlayersList
---     })
--- end)
-
